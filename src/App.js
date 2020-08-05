@@ -8,6 +8,7 @@ import Navigation from "./Components/Navigation";
 
 const App = () => {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
@@ -15,6 +16,7 @@ const App = () => {
       .then((res) => {
         const posts = res.data;
         setPosts(posts);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
@@ -23,13 +25,19 @@ const App = () => {
 
   return (
     <Router>
-      <>
-        <Navigation />
-        <Switch>
-          <Route exact path="/" component={() => <Home posts={posts} />} />
-          <Route path="/login" component={Login} />
-        </Switch>
-      </>
+      <Navigation />
+      <Switch>
+        <Route
+          exact
+          path="/"
+          component={
+            loading
+              ? () => <div>Loading posts...</div>
+              : () => <Home posts={posts} />
+          }
+        />
+        <Route path="/login" component={Login} />
+      </Switch>
     </Router>
   );
 };

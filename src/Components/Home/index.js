@@ -1,23 +1,25 @@
 import React from "react";
 
+import Post from "../Post";
+
 const Home = (props) => {
   const { posts } = props;
 
   return (
     <div>
-      <h2>Blog posts</h2>
+      <h2 style={{ textAlign: "center" }}>Blog Posts</h2>
 
       {posts.map((post) => {
         return (
-          <div key={post.author.id}>
-            <h3>{post.title}</h3>
-            <p>
-              By {post.author.name} on {post.createdAt}
-            </p>
-            <p>{post.content}</p>
-            <span>{post.prev}</span>
-            <span>{post.next}</span>
-          </div>
+          <Post
+            key={post.author.id}
+            title={post.title}
+            author={post.author}
+            content={post.content}
+            prev={post.prev}
+            next={post.next}
+            createdAt={post.createdAt}
+          />
         );
       })}
     </div>
