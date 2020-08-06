@@ -25,8 +25,12 @@ const StyledLink = styled(Link)`
 const Navigation = () => {
   return (
     <Nav>
-      <StyledLink to="/">Home</StyledLink>
-      <StyledLink to="/login">login</StyledLink>
+      <StyledLink data-testid="homeLink" to="/">
+        Home
+      </StyledLink>
+      <StyledLink data-testid="loginLink" to="/login">
+        login
+      </StyledLink>
     </Nav>
   );
 };

@@ -14,8 +14,8 @@ describe("<App />", () => {
     // loading element rendered
     expect(screen.getByText(/loading posts/i)).toBeInTheDocument();
 
-    // await waitForElementToBeRemoved(screen.getByText(/loading posts/i));
+    await waitForElementToBeRemoved(screen.getByText(/loading posts/i));
 
-    // expect(axios.get).toHaveBeenCalledTimes(1);
+    expect(axios.get).toHaveBeenCalledTimes(1);
   });
 });

@@ -27,7 +27,12 @@ const Login = () => {
         placeholder="Enter your password"
         data-testid="password"
       />
-      <input onClick={(e) => e.preventDefault()} type="submit" value="Login" />
+      <input
+        onClick={(e) => e.preventDefault()}
+        type="submit"
+        data-testid="submit"
+        value="Login"
+      />
     </Form>
   );
 };
