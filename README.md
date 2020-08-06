@@ -1,0 +1,2 @@
+- Navigation component: test clicking links and confirm navigation to url.
+- Home component: test fetching posts.

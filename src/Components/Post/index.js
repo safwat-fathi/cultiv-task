@@ -34,8 +34,12 @@ const Post = (props) => {
         By {author.name} on {createdAt}
       </p>
       <Content>{content}</Content>
-      <StyledLink to={prev}>prev</StyledLink>
-      <StyledLink to={next}>next</StyledLink>
+      <StyledLink to={prev} disabled>
+        prev
+      </StyledLink>
+      <StyledLink to={next} disabled>
+        next
+      </StyledLink>
       <hr />
     </StyledPost>
   );

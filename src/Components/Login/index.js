@@ -15,8 +15,18 @@ const Form = styled.form`
 const Login = () => {
   return (
     <Form>
-      <input type="email" placeholder="Enter your email" />
-      <input type="password" placeholder="Enter your password" />
+      <input
+        autoComplete="on"
+        data-testid="email"
+        type="email"
+        placeholder="Enter your email"
+      />
+      <input
+        autoComplete="on"
+        type="password"
+        placeholder="Enter your password"
+        data-testid="password"
+      />
       <input onClick={(e) => e.preventDefault()} type="submit" value="Login" />
     </Form>
   );

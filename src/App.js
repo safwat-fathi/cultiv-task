@@ -32,7 +32,9 @@ const App = () => {
           path="/"
           component={
             loading
-              ? () => <div>Loading posts...</div>
+              ? () => (
+                  <div style={{ textAlign: "center" }}>Loading posts...</div>
+                )
               : () => <Home posts={posts} />
           }
         />

@@ -1,3 +1,8 @@
 body {
   margin: 0;
 }
+
+/* disable clicking links with disabled attribute */
+a[disabled] {
+  pointer-events: none;
+}
